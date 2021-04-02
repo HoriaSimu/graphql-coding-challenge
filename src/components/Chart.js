@@ -1,6 +1,7 @@
 import React from 'react';
 import { Group } from '@visx/group';
 import { Bar } from '@visx/shape';
+import { AxisBottom, AxisLeft } from '@vx/axis';
 import { scaleLinear, scaleBand } from '@visx/scale';
 
 const data = [
@@ -55,7 +56,7 @@ const data = [
 ];
 
 // Define the graph dimensions and margins
-const width = 500;
+const width = 750;
 const height = 500;
 const margin = { top: 20, bottom: 20, left: 20, right: 20 };
 
@@ -98,7 +99,24 @@ function Chart(props) {
               y={yMax - barHeight}
               height={barHeight}
               width={xScale.bandwidth()}
-              fill="#fc2e1c"
+              fill="#3B444B"
+            />
+            <AxisLeft
+              hideTicks={true}
+              scale={yScale}
+              tickLabelProps={(value, index) => ({
+                fontSize: 11,
+                textAnchor: 'end',
+              })}
+            />
+            <AxisBottom
+              top={yMax}
+              hideTicks={true}
+              scale={xScale}
+              tickLabelProps={(value, index) => ({
+                fontSize: 11,
+                textAnchor: 'middle',
+              })}
             />
           </Group>
         );
