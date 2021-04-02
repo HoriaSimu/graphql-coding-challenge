@@ -31,7 +31,7 @@ const App = () => {
   });*/
 
   return (
-    <div>
+    <div className="wrapper">
       <h2>Monthly postcount - 2019</h2>
       <Chart />
     </div>
