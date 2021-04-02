@@ -18,7 +18,9 @@ const App = () => {
   //if (loading) return <p>Loading...</p>
   //if (error) return `Error! ${error.message}`;
 
-  /*const fetchedData = data.allPosts.map(({ id, createdAt }) => {
+  /*
+    // this is a test code to check if data is fetched succesfully from the fakerQL api
+    const fetchedData = data.allPosts.map(({ id, createdAt }) => {
     let convertedDate = new Date(Number(createdAt));
     let year = convertedDate.getFullYear();
     return (
