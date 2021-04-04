@@ -21,19 +21,20 @@ Upon reading the list of requirements, I was thinking to follow this process:
 * Process the fetched data:
   * Extract year and month from the timestamp of the posts
   * Filter the posts made in 2019
-  * Count the elements of the array posted in each month
+  * Parse the array and count the posts made in each month
   * Final output should be an array of objects having the properties *month* and *postCount*
-* Create a Chart component and import the relevant dependencies for a bar chart from vx. I used the basic template for a bar chart from [here](https://github.com/airbnb/visx). Since the API seems to be down, I used a mockup array as input data.
+* Create a Chart component and import the relevant dependencies for a bar chart from vx. I used the basic template for a bar chart from [here](https://github.com/airbnb/visx).
 * Add some basic CSS styling
 
 ### Challenges
 
-* The API seemed to be down for the whole day, so I tried to develop the app with a mockup set of data. The step of processing the graphQL query is missing at the moment, but I would like to give it a chance.
 * It was my first time using GraphQL and vx, so I had to do some additional reading (around 1h) and do some test queries to the API to get familiarized with them.
+* The API seemed to be down on Friday, so I coded most of the app using a mockup set of data. After the API came back online, I coded the remaining steps (mainly the array manipulation logic).
+
 
 ### Improvements to make
 
-* Finish the third step - the processing of the query output
 * Add some labels on the left axis, to indicate the post count level
-* Improve user experience by showing the postcount when a bar is hovered
-* Maybe add a button to fetch another set of data and see how the chart changes
+* Improve user experience by showing the postcount when they hover the mouse over a bar
+* Add a button to fetch another set of data and see how the chart changes
+* Responsiveness - at the moment the chart does not resize on smaller window/screen sizes
