@@ -5,7 +5,7 @@ import Chart from './Chart';
 
 const FETCH_DATA = gql`
   query GetPosts {
-      allPosts (count: 50) {
+      allPosts (count: 100) {
         createdAt
       }
     }
@@ -20,10 +20,7 @@ const App = () => {
   // the array `results` will hold the year and month of each post
   const results = [];
 
-  // usually a .map method should return a value, so this is not ideal
-  // but works for now
-
-  data.allPosts.map(({ createdAt }) => {
+  data.allPosts.forEach(({ createdAt }) => {
     let convertedDate = new Date(Number(createdAt));
     let year = convertedDate.getFullYear();
     let month = convertedDate.getMonth();
@@ -34,6 +31,7 @@ const App = () => {
     });
   });
 
+
   // filtering away the posts not made in 2019
   // this might be unnecessary, since all posts from fakerQL *seem* to be made in 2019
   // but better safe than sorry
@@ -42,7 +40,7 @@ const App = () => {
     return post.year === 2019;
   });
 
-  // `chartData` will contain the post count for each month
+  // `chartData` will hold the total post count for each month
   // this will be passed as a prop to the Chart component
 
   const chartData = [];

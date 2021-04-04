@@ -13,7 +13,7 @@ function Chart(props) {
 
   // Define the graph dimensions and margins
   const width = 750;
-  const height = 500;
+  const height = 300;
   const margin = { top: 20, bottom: 20, left: 20, right: 20 };
 
   // Then we'll create some bounds
