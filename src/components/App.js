@@ -2,8 +2,8 @@ import React from 'react';
 import { useQuery, gql } from '@apollo/client'
 
 import '../style/style.css';
-
 import Chart from './Chart';
+import PostList from './PostList';
 
 const FETCH_DATA = gql`
   query GetPosts {
@@ -66,6 +66,7 @@ const App = () => {
     <div className="wrapper">
       <h2>Monthly postcount - 2019</h2>
       <Chart chartData={chartData} />
+      <PostList />
     </div>
   );
 }
