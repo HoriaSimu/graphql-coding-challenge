@@ -1,6 +1,8 @@
 import React from 'react';
 import { useQuery, gql } from '@apollo/client'
 
+import '../style/style.css';
+
 import Chart from './Chart';
 
 const FETCH_DATA = gql`
