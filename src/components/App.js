@@ -8,6 +8,8 @@ import PostList from './PostList';
 const FETCH_DATA = gql`
   query GetPosts {
       allPosts (count: 100) {
+        id
+        title
         createdAt
       }
     }
@@ -66,7 +68,7 @@ const App = () => {
     <div className="wrapper">
       <h2>Monthly postcount - 2019</h2>
       <Chart chartData={chartData} />
-      <PostList />
+      <PostList tableData={data.allPosts} />
     </div>
   );
 }
